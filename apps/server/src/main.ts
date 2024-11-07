@@ -10,7 +10,7 @@ import {
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 
-const app = makeExpressApp();
+export const app = makeExpressApp();
 
 app.listen(port, host, () => {
   appLog(`Server started on http://${host}:${port}`);
