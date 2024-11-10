@@ -111,6 +111,7 @@ const UserProfile = () => {
                     Favorite Book
                   </h3>
                   <Button
+                    data-testid="edit-button-favorite-book"
                     variant="ghost"
                     size="sm"
                     onClick={() => setIsEditingBook(!isEditingBook)}
