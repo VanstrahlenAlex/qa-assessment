@@ -83,7 +83,7 @@ const UserProfile = () => {
         <Card className="shadow-lg">
           <CardHeader className="text-center">
             <div className="mx-auto bg-gray-100 rounded-full p-6 w-24 h-24 flex items-center justify-center mb-4">
-              <User className="w-12 h-12 text-gray-600" />
+              <User className="w-12 h-12 text-gray-600" data-testid="icon-user" />
             </div>
             <CardTitle className="text-2xl font-bold">
               {user?.username}

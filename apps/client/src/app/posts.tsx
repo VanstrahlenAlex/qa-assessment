@@ -139,6 +139,8 @@ const PostsPage = () => {
                           size="icon"
                           onClick={() => handleDelete(post.id)}
                           className="delete-button"
+                          id='delete-button'
+                          data-testid='delete-button'
                         >
                           <Trash2 className="h-4 w-4" />
                         </Button>

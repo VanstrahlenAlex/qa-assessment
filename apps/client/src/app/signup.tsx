@@ -88,6 +88,8 @@ const Signup = () => {
                     <div className="relative">
                       <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                       <Input
+                        id='username'
+                        
                         type="text"
                         placeholder="Choose a username"
                         className="pl-10"
@@ -105,6 +107,8 @@ const Signup = () => {
                     <div className="relative">
                       <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                       <Input
+                        id='password'
+
                         type="password"
                         placeholder="Choose a password"
                         className="pl-10"
@@ -122,6 +126,8 @@ const Signup = () => {
                     <div className="relative">
                       <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                       <Input
+
+                        id='confirmPassword'
                         type="password"
                         placeholder="Confirm your password"
                         className="pl-10"
