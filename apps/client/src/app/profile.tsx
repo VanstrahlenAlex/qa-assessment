@@ -120,12 +120,12 @@ const UserProfile = () => {
                   </Button>
                 </div>
                 {!isEditingBook ? (
-                  <p className="mt-1 text-sm text-gray-900">
+                  <p className="mt-1 text-sm text-gray-900" data-testid="favorite-book-author">
                     {user?.favoriteBook ? (
                       <>
                         {user.favoriteBook.title}
                         {user.favoriteBook.author_name?.[0] && (
-                          <span className="text-gray-500">
+                          <span className="text-gray-500" >
                             {' '}
                             by {user.favoriteBook.author_name[0]}
                           </span>
