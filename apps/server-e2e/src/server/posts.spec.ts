@@ -6,7 +6,7 @@ describe('Posts API', () => {
   let userId: string;
 
   beforeAll(async () => {
-    // Register a test user
+    
     const username = `testuser_${Math.random().toString(36).substring(7)}`;
     const password = 'password123';
 
@@ -19,12 +19,12 @@ describe('Posts API', () => {
     authToken = registerResponse.data.token;
     userId = registerResponse.data.userId;
 
-    // Configure axios to use the auth token for subsequent requests
+
     axios.defaults.headers.common['Authorization'] = authToken;
   });
 
   afterAll(() => {
-    // Clean up axios headers
+
     delete axios.defaults.headers.common['Authorization'];
   });
 
@@ -36,13 +36,13 @@ describe('Posts API', () => {
         content: 'This is a test post content.',
       };
 
-      // Create post
+
       const createResponse = await axios.post<Post>('/posts', postData);
 
       // Verify response status
       expect(createResponse.status).toBe(201);
 
-      // Verify response data
+
       const createdPost = createResponse.data;
       expect(createdPost).toMatchObject({
         title: postData.title,
@@ -50,19 +50,19 @@ describe('Posts API', () => {
         authorId: userId,
       });
 
-      // Verify post properties
+
       expect(createdPost.id).toBeDefined();
       expect(createdPost.createdAt).toBeDefined();
       expect(createdPost.updatedAt).toBeDefined();
 
-      // Verify we can fetch the created post
+
       const getResponse = await axios.get<Post>(`/posts/${createdPost.id}`);
       expect(getResponse.status).toBe(200);
       expect(getResponse.data).toEqual(createdPost);
     });
 
     it('should reject post creation with invalid data', async () => {
-      // Test with empty title
+
       const invalidPost = {
         title: '',
         content: 'Test content',
@@ -78,7 +78,7 @@ describe('Posts API', () => {
     });
 
     it('should reject unauthorized post creation', async () => {
-      // Remove auth token
+
       delete axios.defaults.headers.common['Authorization'];
 
       try {

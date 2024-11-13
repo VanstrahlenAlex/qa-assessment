@@ -26,7 +26,7 @@ test.describe('Login Page E2E Tests', () => {
   });
 
   test('successfully logs in with correct credentials', async ({ page }) => {
-    // Rellena campos con datos válidos
+    
     await page.getByPlaceholder('Username').fill('testuser');
     await page.getByPlaceholder('Password').fill('testpassword');
     await page.getByRole('button', { name: 'Sign in' }).click();
@@ -39,7 +39,7 @@ test.describe('Login Page E2E Tests', () => {
 
     await page.getByRole('link', { name: 'Create one' }).click();
 
-    
+
     await expect(page).toHaveURL('/signup');
   });
 });
